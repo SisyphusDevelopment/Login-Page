@@ -1,129 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:wght@200&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'poppins', 'sans-serif';
 }
-.header{
-    position:fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'poppins';
-    font-variant: small-caps;
-    font-size: large;
-    top: 100px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.7);
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-    color:#Fff;
 
-}
-section {
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    width: 100%;
-    background: url('/assets/images/xHpu0zz.jpeg')no-repeat;
-    background-position: center;
+    background: url(/Login-Page/assets/images/xHpu0zz.jpeg) no-repeat;
     background-size: cover;
-    
+    background-position: center;
 }
-.form-box {
+
+header {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a{
     position: relative;
-    width: 400px;
-    height: 450px;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    border-radius: 6px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .77s;
+}
+
+.navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    margin-left: 40px;
     background: transparent;
-    border: 2px solid rgba(255,255,255,0.6);
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: 0.77s;
+}
+
+.navigation .btnLogin-popup:hover{
+    background: #fff;
+    color: #000;
+}
+
+.wrapper {
+    position:relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 36px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-h2 {
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.form-box h2 {
     font-size: 2em;
-    color: #fff;
-    text-align:center;    
+    color: black;
+    text-align: center;
 }
-.inputbox {
+
+.input-box {
     position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #000 ;
     margin: 30px 0;
-    width: 310px;
-    border-bottom: 2px solid #fff;
 }
-.inputbox label {
-    position:absolute;
+
+.input-box label {
+    position: absolute;
     top:50%;
     left: 5px;
     transform: translateY(-50%);
-    color: #fff;
     font-size: 1em;
+    color: #000;
     pointer-events: none;
-    transition: 0.7s;
+    transition: .77s;
 }
-input:focus ~ label,
-input:valid ~ label{
-    top: 5px;
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
 }
-.inputbox input {
+
+.input-box input {
     width: 100%;
-    height: 50px;
+    height: 100%;
     background: transparent;
     border: none;
     outline: none;
-    font-size: 1em;
-    padding: 0 35px 0 5px;
-    color: #fff;
 }
-.inputbox ion-icon {
+
+.input-box .icon{
     position:absolute;
     right: 8px;
-    color: #Fff;
     font-size: 1.2em;
-    top: 20px;
-}
-.forget {
-    margin: -15px 0 15px;
-    font-size: .9em;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-}
-.forget label input{
-    margin-right: 3px;
-}
-.forget label a{ 
-    color: #fff;
-    text-decoration: none;
-}
-.forget label a:hover {
-    text-decoration: underline;
-}
-button {
-    width: 100%;
-    height: 40px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-}
-.register {
-    font-size: .9em;
-    color: #fff;
-    text-align: center;
-    margin: 25px 0 10px;
-}
-.register p a{
-    margin-left:3px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-}
-.register p a:hover{
-    text-decoration: underline;
+    color: #000;
+    line-height: 60px;
 }
